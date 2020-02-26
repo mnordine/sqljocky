@@ -83,7 +83,7 @@ class ConnectionPool extends Object with _ConnectionHelpers implements Queriable
       _log.finest("Creating new pooled cnx#${_pool.length}");
       _createConnection(c);
     } else {
-      _log.finest("Waiting for an available connection");
+      print('Waiting for an available connnection, in use: ${_pool.length}, max: $_max');
       _pendingConnections.add(c);
     }
     return c.future;
